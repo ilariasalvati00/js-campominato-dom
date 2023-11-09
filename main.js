@@ -12,6 +12,8 @@ function createGrid(x){
     for (let i=0; i< boxes.length; i++){
         boxes[i].remove();
     }
+    const elem = document.getElementById("risultato");
+    elem.innerHTML="";
 
     let numero = 0;
     if (x == "Hard"){
@@ -55,7 +57,7 @@ function createGrid(x){
                 console.log(`Hai cliccato la bomba ${i} - HAI PERSO`);
                 const boxes = document.querySelectorAll(".box");
                 for (let i=0; i<boxes.length; i++){
-                    // rimpiazzo ogni box con il proprio clone in modo da levare ogni eventlistner
+                    // rimpiazzo ogni box con il proprio clone in modo da levare ogni eventlistener
                     boxes[i].replaceWith(boxes[i].cloneNode(true));
                 }
                 const elem = document.getElementById("risultato");
